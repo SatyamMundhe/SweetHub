@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+	integrity="sha512-Dvz6rN5et5y5EJ8VsjW20JvJSZVxM/5XOk+WWndWewIzQjJLl6y/ba8V/wRO3+q1fEJx6r+jSP6oRdojsm+ow=="
+	crossorigin="anonymous" referrerpolicy="no-referrer" />
+	
+
+<link rel="stylesheet" type="text/css" href="/css/indexa.css">
+<link rel="stylesheet" type="text/css" href="/css/indexb.css">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+
+
+<title>Document</title>
+
+</head>
+
+<body>
+
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#"> <img
+				th:src="@{/image/logo.png}" src="/image/logo.png" width="80"
+				height="80" class="d-inline-block align-top" alt="" />
+			</a>
+			<!-- <p class="title"> SweetHub</p> -->
+			<center>
+				<h1 class="titl">
+					Sweet <span>Hub</span>
+				</h1>
+			</center>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto"></ul>
+				<ul class="navbar-nav">
+					<li class="nav-item active"><a class="nav-link"
+						th:href="@{/index}" href="#">Home</a></li>
+					<li class="nav-item active"><a class="nav-link"
+						th:href="@{/shop}" href="#">Shop</a></li>
+					<!-- <li class="nav-item active">
+                    <a class="nav-link" th:href="@{/cart}" href="#">cart</a>
+                </li> 
+                <li class="nav-item active">
+                    <span class="nav-link" th:text="${cartCount}">0</span>
+                </li> -->
+				</ul>
+				<ul class="navbar-nav">
+
+					<li class="nav-item active"><a class="nav-link"
+						sec:authorize="isAuthenticated()" th:href="@{/login}" href="#">Logout</a>
+					</li>
+
+
+					<li class="nav-item active"><a class="nav-link"
+						th:href="@{/cart}" href="#">cart</a></li>
+					<li class="nav-item active"><span class="nav-link"
+						th:text="${cartCount}">0</span></li>
+				</ul>
+
+			</div>
+		</div>
+	</nav>
+
+
+	<br>
+	<br>
+	<br>
+	<!-- my items -->
+
+
+
+
+
+	<div class="bg mt-5">
+		<div class="bg-product mt-5">
+			<div class="container product">
+				<div class="row">
+					<div id="sliderproduct" class="carousel slide "
+						data-ride="carousel" data-interval="10000">
+						<ol class="carousel-indicators">
+							<li data-target="#sliderproduct" data-slide-to="0" class="active"></li>
+							<li data-target="#sliderproduct" data-slide-to="1"></li>
+							<li data-target="#sliderproduct" data-slide-to="2"></li>
+						</ol>
+						<div class="carousel-inner" role="listbox"
+							data-interval="10000000">
+							<div class="carousel-item active">
+								<div class="container text-center">
+									<div class="row">
+										<div class="col-sm-6 image">
+											<div class="item">
+												<h1>Today's Deal</h1>
+												<img class="img-fluid"
+													src="https://images.herzindagi.info/image/2022/Sep/Gulab-jamun-and-hacks.jpg"
+													alt="">
+											</div>
+											<!--enditem-->
+										</div>
+										<!--endcol-->
+										<div class="col-sm-6">
+											<div class="top d-flex justify-content-center"></div>
+											<!--endtop-->
+											<div class="details">
+												<h2 class="cr3">Gulab Jamun</h2>
+												<p class="cr4">Dessert, sweet, sticky sugar syrup.</p>
+												<div class="rating">
+													<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+														class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+														class="fa fa-star"></i>
+												</div>
+												<!--endrating-->
+												<p class="cr1">
+													Rs.240/- </s>
+												</p>
+												<a href="/shop" class="btn btn-food">Buy Now</a>
+											</div>
+											<!--enddetails-->
+										</div>
+										<!--endcol-->
+									</div>
+									<!--endrow-->
+								</div>
+								<!--endcontainer-->
+							</div>
+							<!--endcarousel-item-->
+							<div class="carousel-item">
+								<div class="container text-center">
+									<div class="row">
+										<div class="col-sm-6 image">
+											<div class="item">
+												<h1>Today's Deal</h1>
+												<img class="img-fluid"
+													src="https://www.awesomecuisine.com/wp-content/uploads/2019/10/kaju-katli.jpg?ezimgfmt=ng:webp/ngcb5"
+													alt="">
+											</div>
+											<!--enditem-->
+										</div>
+										<!--endcol-->
+										<div class="col-sm-6">
+											<div class="top d-flex justify-content-center"></div>
+											<!--endtop-->
+											<div class="details">
+												<h2 class="cr3">Kaju Katli</h2>
+												<p class="cr4">
+													silver-topped, Diamond-shaped,<br> cashew nuts, sugar
+													and ghee.
+												</p>
+												<div class="rating">
+													<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+														class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+														class="fa fa-star"></i>
+												</div>
+												<!--endrating-->
+												<p class="cr1">
+													Rs.350/-</s>
+												</p>
+												<a href="/shop" class="btn btn-food">Buy Now</a>
+											</div>
+											<!--enddetails-->
+										</div>
+										<!--endcol-->
+									</div>
+									<!--endrow-->
+								</div>
+								<!--endcontainer-->
+							</div>
+							<!--endcarousel-item-->
+
+							<div class="carousel-item">
+								<div class="container text-center">
+									<div class="row">
+										<div class="col-sm-6 image">
+											<div class="item">
+												<h1>Today's Deal</h1>
+												<img class="img-fluid"
+													src="https://static.toiimg.com/thumb/msid-80752819,imgsize-1332633,width-800,height-600,resizemode-75/80752819.jpg"
+													alt="">
+											</div>
+											<!--enditem-->
+										</div>
+										<!--endcol-->
+										<div class="col-sm-6">
+											<div class="top d-flex justify-content-center"></div>
+											<!--endtop-->
+											<div class="details">
+												<h2 class="cr3">Chocolates</h2>
+												<p class="cr4">
+													dairy; milky & buttery,<br> vanilla, caramel.
+												</p>
+												<div class="rating">
+													<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+														class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+														class="fa fa-star"></i>
+												</div>
+												<!--endrating-->
+												<p class="cr1">
+													Rs.430/- to 700/-</s>
+												</p>
+												<a href="/shop" class="btn btn-food">Buy Now</a>
+											</div>
+											<!--enddetails-->
+										</div>
+										<!--endcol-->
+									</div>
+									<!--endrow-->
+								</div>
+								<!--endcontainer-->
+							</div>
+							<!--endcarousel-item-->
+
+							<div class="carousel-item">
+								<div class="container text-center">
+									<div class="row">
+										<div class="col-sm-6 image">
+											<div class="item">
+												<h1>Today's Deal</h1>
+												<img class="img-fluid"
+													src="https://mobimg.b-cdn.net/v3/fetch/78/789c913592e7f2c557e986109da6d34a.jpeg?w=1000&r=0.5625"
+													alt="">
+											</div>
+											<!--enditem-->
+										</div>
+										<!--endcol-->
+										<div class="col-sm-6">
+											<div class="top d-flex justify-content-center"></div>
+											<!--endtop-->
+											<div class="details">
+												<h2 class="cr3">Chocolate Cakes</h2>
+												<p class="cr4">Melted chocolate, Cocoa powder.</p>
+												<div class="rating">
+													<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+														class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+														class="fa fa-star"></i>
+												</div>
+												<!--endrating-->
+												<p class="cr1">
+													Rs.750/-/-</s>
+												</p>
+												<a href="/shop" class="btn btn-food">Buy Now</a>
+											</div>
+											<!--enddetails-->
+										</div>
+										<!--endcol-->
+									</div>
+									<!--endrow-->
+								</div>
+								<!--endcontainer-->
+							</div>
+							<!--endcarousel-item-->
+
+
+							<a class="carousel-control-prev fa fa-angle-left"
+								href="#sliderproduct" role="button" data-slide="prev"> </a> <a
+								class="carousel-control-next fa fa-angle-right"
+								href="#sliderproduct" role="button" data-slide="next"> </a>
+						</div>
+						<!--endslidesliderproduct-->
+					</div>
+					<!--endrow-->
+				</div>
+				<!--endcontainer-->
+			</div>
+			<!--endbg-product-->
+		</div>
+	</div>
+
+	<!--Review-->
+
+	<div class="review" id="Review">
+		<h1>
+			Customer<span>Review</span>
+		</h1>
+
+		<div class="review_box">
+			<div class="review_card">
+
+				<div class="review_profile">
+					<img
+						src="/image/review1.jpg">
+				</div>
+
+				<div class="review_text">
+					<h2 class="name">Niraj</h2>
+
+					<div class="review_icon">
+						<i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i>
+						<i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i>
+						<i class="fa-solid fa-star-half-stroke"></i>
+					</div>
+
+					<div class="review_social">
+						<i class="fa-brands fa-facebook-f"></i> <i
+							class="fa-brands fa-instagram"></i> <i
+							class="fa-brands fa-twitter"></i> <i
+							class="fa-brands fa-linkedin-in"></i>
+					</div>
+
+					<p>"I recently tried the chocolate lava cake at the SweetHut,
+						and I have to say it was the best dessert I've ever tasted! The
+						cake was perfectly moist and rich, with a gooey center that oozed
+						out as I cut into it. The warm, melted chocolate paired perfectly
+						with the cool scoop of vanilla ice cream that was served alongside
+						it. Every bite was pure bliss, and I can't wait to go back and
+						have it again. If you're a chocolate lover, you simply must try
+						this dessert!"</p>
+
+				</div>
+
+			</div>
+
+			<div class="review_card">
+
+				<div class="review_profile">
+					<img
+						src="/image/review2.jpg">
+				</div>
+
+				<div class="review_text">
+					<h2 class="name">Yadnesh</h2>
+
+					<div class="review_icon">
+						<i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i>
+						<i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i>
+						<i class="fa-solid fa-star-half-stroke"></i>
+					</div>
+
+					<div class="review_social">
+						<i class="fa-brands fa-facebook-f"></i> <i
+							class="fa-brands fa-instagram"></i> <i
+							class="fa-brands fa-twitter"></i> <i
+							class="fa-brands fa-linkedin-in"></i>
+					</div>
+
+					<p>"I recently discovered a new dessert spot in town and I
+						tried their signature dish, a sweet and decadent sticky toffee
+						pudding. Let me tell you, it was heavenly! The cake was perfectly
+						moist and infused with just the right amount of toffee flavor, and
+						the warm toffee sauce drizzled on top added a perfect sweetness
+						that balanced the richness of the cake. I highly recommend giving
+						this dessert a try, it's the perfect treat to satisfy your sweet
+						tooth!"</p>
+
+				</div>
+
+			</div>
+
+			<div class="review_card">
+
+				<div class="review_profile">
+					<img
+						src="/image/review3.jpg">
+				</div>
+
+				<div class="review_text">
+					<h2 class="name">Riya</h2>
+
+					<div class="review_icon">
+						<i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i>
+						<i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i>
+						<i class="fa-solid fa-star-half-stroke"></i>
+					</div>
+
+					<div class="review_social">
+						<i class="fa-brands fa-facebook-f"></i> <i
+							class="fa-brands fa-instagram"></i> <i
+							class="fa-brands fa-twitter"></i> <i
+							class="fa-brands fa-linkedin-in"></i>
+					</div>
+
+					<p>"I recently tried the badam drink at SweetHut, and
+						unfortunately it didn't live up to my expectations. While the
+						drink had a nice almond flavor, it was overly sweet and had an
+						artificial taste to it. The texture was also a bit grainy, which
+						made it unpleasant to drink. I was disappointed that the drink
+						didn't live up to its potential, as I had heard good things about
+						it. Overall, I wouldn't recommend the badam drink at this
+						particular restaurant."</p>
+
+				</div>
+
+			</div>
+
+			<div class="review_card">
+
+				<div class="review_profile">
+					<img
+						src="/image/review4.png">
+				</div>
+
+				<div class="review_text">
+					<h2 class="name">David</h2>
+
+					<div class="review_icon">
+						<i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i>
+						<i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i>
+						<i class="fa-solid fa-star-half-stroke"></i>
+					</div>
+
+					<div class="review_social">
+						<i class="fa-brands fa-facebook-f"></i> <i
+							class="fa-brands fa-instagram"></i> <i
+							class="fa-brands fa-twitter"></i> <i
+							class="fa-brands fa-linkedin-in"></i>
+					</div>
+
+					<p>"I stopped by my local diner and ordered a side of their
+						famous hot chips, and let me tell you, they did not disappoint!
+						The chips were perfectly crispy on the outside and fluffy on the
+						inside, with just the right amount of seasoning. I paired them
+						with some homemade garlic aioli, which was the perfect complement
+						to the chips. Overall, I highly recommend these hot chips -
+						they're a must-try if you're ever in the area!"</p>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+	<br>
+	<br>
+	<br>
+
+	<!--Team-->
+
+	<div class="team">
+		<h1>
+			Our<span>Team</span>
+		</h1>
+
+		<div class="team_box">
+			<div class="profile">
+				<img src="/image/satyam.jpg">
+
+				<div class="info">
+					<h2 class="name">Chef Satyam</h2>
+					<p class="bio">Good food is not just about taste, it's a form
+						of art that nourishes both the body and soul...</p>
+
+					<div class="team_icon">
+						<i class="fa-brands fa-facebook-f"></i> <i
+							class="fa-brands fa-twitter"></i> <i
+							class="fa-brands fa-instagram"></i>
+					</div>
+
+				</div>
+
+			</div>
+
+			<div class="profile">
+				<img src="/image/divya.jpg">
+
+				<div class="info">
+					<h2 class="name">Chef Divya</h2>
+					<p class="bio">Food is not just fuel, it's information. It
+						talks to your DNA and tells it what to do...</p>
+
+					<div class="team_icon">
+						<i class="fa-brands fa-facebook-f"></i> <i
+							class="fa-brands fa-twitter"></i> <i
+							class="fa-brands fa-instagram"></i>
+					</div>
+
+				</div>
+
+			</div>
+
+
+
+			<div class="profile">
+				<img src="/image/dileep.jpg">
+
+				<div class="info">
+					<h2 class="name">Chef Dileep</h2>
+					<p class="bio">Good food is not just about the taste - it's
+						about the memories and experiences it creates...</p>
+
+					<div class="team_icon">
+						<i class="fa-brands fa-facebook-f"></i> <i
+							class="fa-brands fa-twitter"></i> <i
+							class="fa-brands fa-instagram"></i>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+
+	<!--Footer-->
+
+	<footer>
+		<div class="footer_main">
+
+			<div class="footer_tag">
+				<h2>Location</h2>
+				<p>Hyderabad</p>
+				<p>Visakhapatnam</p>
+				<p>Mumbai</p>
+				<p>Chennai</p>
+			</div>
+
+			<!-- <div class="footer_tag">
+                <h2>Quick Link</h2>
+                <p>Home</p>
+                <p>About</p>
+                <p>Menu</p>
+                <p>Gallary</p>
+                <p>Order</p>
+            </div> -->
+
+			<div class="footer_tag">
+				<h2>
+					<a href="/contact">Contact</a>
+				</h2>
+				<p>+91 123 456 7890</p>
+				<p>Divya123@gmail.com</p>
+				<p>Satyam123@gmail.com</p>
+				<p>Dileep123@gmail.com</p>
+			</div>
+
+			<div class="footer_tag">
+				<h2>Our Service</h2>
+				<p>Fast Delivery</p>
+				<p>Easy Payments</p>
+				<p>24 x 7 Service</p>
+			</div>
+
+			<div class="footer_tag">
+				<h2>Follows</h2>
+				<i class="fa-brands fa-facebook-f"></i> <i
+					class="fa-brands fa-twitter"></i> <i class="fa-brands fa-instagram"></i>
+				<i class="fa-brands fa-linkedin-in"></i>
+			</div>
+
+		</div>
+
+		<p class="end">
+			Design by<span><i class="fa-solid fa-face-grin"></i> Team_02</span>
+		</p>
+
+	</footer>
+
+
+
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>

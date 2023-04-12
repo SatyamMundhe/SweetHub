@@ -1,0 +1,38 @@
+body {
+	background-image: linear-gradient(135deg, #FAB2FF 10%, #1904E5 100%);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	font-family: open sans, sans-serif;
+	color: #333;
+}
+
+.container {
+	padding: 40px;
+	overflow: hidden;
+	padding: 30px;
+	width: 30%;
+	height: 100%;
+	background: #DCDCDC;
+	overflow: hidden;
+	box-sizing: border-box;
+	opacity: 1;
+	border-radius: 8px;
+	margin-top:40px;
+	color:#000
+}
+.btn{
+	background-color:#1E90FF
+}
+.btn:hover{
+	background-color:#4169E1
+}
+.form-control{
+	    background-color: #FFFFFF
+}
+ .col-sm-4, .col-sm-6 {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 80.333333%;
+    max-width: 100%;
+}
+
